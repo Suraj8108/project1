@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<LINK REL="STYLESHEET" TYPE="TEXT/CSS" HREF="register1.CSS">
+    <title>Kisan Registration</title>
+</head>
+<body>
+    <div class="regform">
+        <h1>
+ Registration Form</h1>
+</div>
+<div class="main">
+    
+        <form action = "display.php" method="POST">
+            <div id="name">
+                <h2 class="name">
+<?php
+	if(isset($_SESSION['message'])){
+    echo $_SESSION['message']; // display the message
+    unset($_SESSION['message']); // clear the value so that it doesn't display again
+}
+?>
+Name </h2>
+<input class="firstname" type="text" name="first_name" ><br>
+                <label class="firstlabel">first name</label>
+                <input class="lastname" type="text" name="last_name"><br>
+                <label class="lastlabel">last name</label>
+            </div>
+<h2 class="name">
+
+Email</h2>
+<input class="email" type="email" name="email" placeholder="Enter your Email" >
+            <h2 class="name">
+Phone</h2>
+            <input class="number" type="tel" name="phone" pattern = "[0-9]{10}" required placeholder="Enter your Phone Number" >
+            <!--<label class="phone-number">Phone Number</label>-->
+    
+    
+            <h2 class="name">
+Aadhar No. </h2>
+<input class="aadhar" type="tel" name="aadhar" pattern = "[0-9]{12}" required placeholder = "Enter your 12 digit aadhar card number">
+            <h2 class="name">
+UserName </h2>
+<input class="Username" type="text" name="Username" placeholder="Create your Username">
+            <h2 class="name">
+            
+Password </h2>
+<input class="Password" type="password" name="Password" placeholder="Create a password">
+			<h2 class="name">
+Confirm Password </h2>
+<input class="CPassword" type="password" name="CPassword" placeholder="ReEnter your Password">
+			<h2 class="name">
+
+    
+            <button type="submit">Register</button>
+    
+    
+        </form>
+</div>
+
+</body>
+</html>
